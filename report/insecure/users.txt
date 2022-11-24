@@ -1,0 +1,10 @@
+[
+ {
+	user:admin,
+	pass:admin.123
+ },
+ {
+	user:bvega,
+	pass:bvega.123
+ }
+]

@@ -1,0 +1,7 @@
+
+@GetMapping(value = "/insecure")
+public void secure(@RequestParam String path, HttpServletResponse response) throws IOException {
+    InputStream resource = new FileInputStream(path);
+    org.apache.commons.io.IOUtils.copy(resource, response.getOutputStream());
+    response.flushBuffer();
+}
