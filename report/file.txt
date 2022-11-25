@@ -1,7 +1,10 @@
-
-@GetMapping(value = "/insecure")
-public void secure(@RequestParam String path, HttpServletResponse response) throws IOException {
-    InputStream resource = new FileInputStream(path);
-    org.apache.commons.io.IOUtils.copy(resource, response.getOutputStream());
-    response.flushBuffer();
-}
+@GetMapping
+    public void insecure(@RequestParam String url, HttpServletResponse response) throws IOException {
+        try{
+            InputStream resource = new FileInputStream(pathRoot+url);
+            org.apache.commons.io.IOUtils.copy(resource, response.getOutputStream());
+            response.flushBuffer();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }

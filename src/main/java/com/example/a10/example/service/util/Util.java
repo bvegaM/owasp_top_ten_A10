@@ -10,6 +10,10 @@ public class Util {
     }
 
     public static Boolean validatePath(String path){
-        return Pattern.matches("[a-zA-Z0-9\\s\\-]{1,50}", path) && new File(path).exists();
+        return Pattern.matches("[a-zA-Z0-9\\s.]{1,50}", path);
+    }
+
+    public static Boolean existsFile(String path){
+        return new File(path).exists();
     }
 }
